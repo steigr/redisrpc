@@ -13,12 +13,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require File.expand_path('../redisrpc/version',__FILE__)
+
 require 'multi_json'
 
 require 'redis'
 
 module RedisRPC
+  VERSION = File.read(File.expand_path('../../../../VERSION',__FILE__))
 
   class RemoteException < Exception; end
   class TimeoutException < Exception; end

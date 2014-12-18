@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/redisrpc/version', __FILE__)
+# require File.expand_path('../../VERSION', __FILE__)
 
 Gem::Specification.new do |s|
   s.name = 'redisrpc'
-  s.version = RedisRPC::VERSION
+  s.version = File.read(File.expand_path('../../VERSION', __FILE__))
   s.license = 'GPLv3'
   s.authors = ['Nathan Farrington']
   s.email = ['nathan@nathanfarrington.com']
@@ -36,10 +36,10 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_runtime_dependency 'redis'
+  s.add_runtime_dependency 'redis', '~> 3'
   s.add_runtime_dependency 'multi_json', '~>1.3'
 
-  s.add_development_dependency 'bundler'
-  s.add_development_dependency 'rake'
-  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'bundler', '~> 1.7'
+  s.add_development_dependency 'rake', '~> 10.0'
+  s.add_development_dependency 'rspec', '~> 3'
 end
