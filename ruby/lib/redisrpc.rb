@@ -19,7 +19,7 @@ require 'multi_json'
 require 'redis'
 
 module RedisRPC
-  VERSION = File.read(File.expand_path('../../../../VERSION',__FILE__))
+  VERSION = File.read(File.expand_path('../../../VERSION',__FILE__))
 
   class RemoteException < Exception; end
   class TimeoutException < Exception; end
